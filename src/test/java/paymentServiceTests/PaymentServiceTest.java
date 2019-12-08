@@ -1,4 +1,4 @@
-package com.paymentServiceTests;
+package test.java.paymentServiceTests;
 
 import java.util.HashMap;
 import java.util.Optional;
