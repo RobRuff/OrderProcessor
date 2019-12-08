@@ -76,6 +76,16 @@ public class PaymentServiceTest {
 	}
 	
 	@Test
+	public void test_payEmptyProducts()
+	{
+		HashMap<Object, ProductTypeEnum> products = new HashMap<>();
+		Payment payment = new Payment();
+		payment.setProducts(products);
+		
+		Assert.assertTrue(payment.purchase() == 0);
+	}
+	
+	@Test
 	public void test_payBookVideoMembership()
 	{
 		HashMap<Object, ProductTypeEnum> products = new HashMap<>();
@@ -97,5 +107,4 @@ public class PaymentServiceTest {
 		Assert.assertTrue(agent.get().getAmountPaid() ==  80);
 		Assert.assertTrue(membership.isUpgraded());
 	}
-	
 }
